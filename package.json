@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "cd day1 && yarn swc ./calorie-counting.ts -d . && node ./calorie-counting.js"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.10",
+    "chokidar": "^3.5.3",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.3.21"
+  }
+}
