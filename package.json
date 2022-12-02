@@ -1,8 +1,5 @@
 {
   "type": "module",
-  "scripts": {
-    "start": "cd day1 && yarn swc ./calorie-counting.ts -d . && node ./calorie-counting.js"
-  },
   "devDependencies": {
     "@types/node": "^18.11.10",
     "chokidar": "^3.5.3",
