@@ -1,5 +1,11 @@
 {
   "type": "module",
+  "license": "ISC",
+  "scripts": {
+     "build": "if [ -z ${DAY+x} ]; then echo 'Please provide DAY env variable' && exit 1; else yarn swc ./day$DAY/*.ts -d day$DAY; fi",
+     "build:watch": "if [ -z ${DAY+x} ]; then echo 'Please provide DAY env variable'; else yarn swc ./day$DAY/*.ts -d day$DAY --watch; fi",
+     "calculate": "yarn build && cd day$DAY && node ./*.js"
+  },
   "devDependencies": {
     "@types/node": "^18.11.10",
     "chokidar": "^3.5.3",
