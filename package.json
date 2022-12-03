@@ -2,13 +2,20 @@
   "type": "module",
   "license": "ISC",
   "scripts": {
-     "build": "if [ -z ${DAY+x} ]; then echo 'Please provide DAY env variable' && exit 1; else yarn swc ./day$DAY/*.ts -d day$DAY; fi",
-     "build:watch": "if [ -z ${DAY+x} ]; then echo 'Please provide DAY env variable'; else yarn swc ./day$DAY/*.ts -d day$DAY --watch; fi",
-     "calculate": "yarn build && cd day$DAY && node ./*.js"
+    "build": "if [ -z ${DAY+x} ]; then echo 'Please provide DAY env variable' && exit 1; else yarn swc ./day$DAY/*.ts -d day$DAY; fi",
+    "build:watch": "if [ -z ${DAY+x} ]; then echo 'Please provide DAY env variable'; else yarn swc ./day$DAY/*.ts -d day$DAY --watch; fi",
+    "calculate": "yarn build && cd day$DAY && node ./*.js",
+    "lint:check": "eslint --max-warnings 0 \"**/*.ts\"",
+    "lint": "eslint --fix \"**/*.ts\""
   },
   "devDependencies": {
     "@types/node": "^18.11.10",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
     "chokidar": "^3.5.3",
+    "eslint": "^8.29.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.0",
     "typescript": "^4.9.3"
   },
   "dependencies": {
